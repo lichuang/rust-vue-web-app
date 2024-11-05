@@ -1,0 +1,20 @@
+[package]
+name = "replited"
+version = "0.1.0"
+edition = "2021"
+description = ""
+
+[dependencies]
+axum = { version = "0.7", features = ["macros", "multipart"] }
+mime_guess = "2"
+rust-embed = "8.3"
+tokio = { version = "1.35.0", features = ["full"] }
+
+[profile.release]
+lto = true
+
+[[bin]]
+name = "vue-server"
+path = "src/main.rs"
+doctest = false
+test = true
